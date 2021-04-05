@@ -9,7 +9,6 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -24,11 +23,126 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/8cc5957ab6.js" crossorigin="anonymous"></script>
+
+    <title>Hotel reservation system</title>
+
+    <style>
+      .container1{
+        text-align: center;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 20rem;
+      }
+      .container1 span{
+        text-transform: uppercase;
+      }
+      .text1{
+        color: white;
+        font-size: 120px;
+        font-weight: 700;
+        letter-spacing: 8px;
+        margin-bottom: 20px;
+        background: black;
+        background-size: 200px;
+        position: relative;
+        animation: text 3s 1;
+      }
+      .text-wrapper1{
+        font-weight: bold;
+        background: #262626 -webkit-gradient(linear, left top, right top, from(#262626), 
+          to(#262626), color-stop(0.5, #fff)) 0 0 no-repeat;
+        -webkit-background-size: 150px;
+        background-size: 150px;
+        color: rgba(255, 255, 255, 0.1);
+        -webkit-background-clip: text;
+        animation: animate8 6s 1;
+        animation-delay: 1.5s;
+        font-size: 90px;
+        font-family: bignoodletitling;
+      }
+      @keyframes animate8{
+        0%, 10%{
+          background-position: -1000px;
+        }
+        20%{
+          background-position: top left;
+        }
+         90%{
+          background-position: top right;
+        }
+         100%{
+          background-position: 1000px;
+        }
+      }
+      @keyframes text{
+        0%{
+          color: black; margin-bottom: -180px;
+        }
+        30%{
+          letter-spacing: 25px; margin-bottom: -100px;
+        }
+         85%{
+          letter-spacing: 8px; margin-bottom: -120px;
+        }
+      }
+      @media screen and (max-width: 1150px) {
+        .text1{
+          font-size: 4rem;
+          margin-bottom: 10px;
+        }
+        .text-wrapper1{
+          font-size: 4rem;
+        }
+        @keyframes text{
+        0%{
+          color: black; margin-bottom: -110px;
+        }
+        30%{
+          letter-spacing: 25px; margin-bottom: -80px;
+        }
+         85%{
+          letter-spacing: 8px; margin-bottom: -90px;
+        }
+      }
+      }
+      @media screen and (max-width: 750px) {
+        .text1{
+          font-size: 1rem;
+          margin-bottom: 20px;
+        }
+        .text-wrapper1{
+          font-size: 1.5rem;
+        }
+        @keyframes text{
+        0%{
+          color: black; margin-bottom: -60px;
+        }
+        30%{
+          letter-spacing: 10px; margin-bottom: -40px;
+        }
+         85%{
+          letter-spacing: 8px; margin-bottom: -30px;
+        }
+      }
+      }     
+    </style>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <div class="container1">
+      <span class="text1">Welcome to</span>
+      <span class="text-wrapper1">Beach Resort</span>
+    </div>
+
+    
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

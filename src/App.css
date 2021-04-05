@@ -1,38 +1,1107 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primaryColor: #af9a7d;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: #232528;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+/*page scroll*/
+::-webkit-scrollbar{
+width: 12px;
+}
+
+::-webkit-scrollbar-track{
+background: var(--mainBlack);
+}
+
+::-webkit-scrollbar-thumb{
+background: var(--primaryColor);
+border-radius: 6px;
+}
+/**/
+/* globals */
+body {
+  color: var(--mainWhite);
+  background: #000 !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+  line-height: 1.4;
+}
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+h4 {
+  font-size: 1.2em;
+  line-height: 1.25;
+  margin-bottom: 1.25em;
+}
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+.btn-main {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainBlack);
+  background: var(--primaryColor);
+  padding: 0.4rem 0.9rem;
+  border: 3px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-main:hover {
+  background: transparent;
+  color: var(--primaryColor);
+  text-decoration: none;
+}
+.loading {
+  text-transform: capitalize;
   text-align: center;
+  margin-top: 3rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container-error{
+  height: 100vh;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.error{
+  position: relative;
+  top: 50%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.error h3{
+  color: var(--mainWhite);
+  margin: 2rem 0;
+}
+.empty-search {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 2rem 0;
+  padding: 1rem;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainWhite);
+}
+@media screen and (max-width: 600px) {
+  .empty-search h4, .error h3, .bookings-info{
+    font-size: 1.2rem;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* end of globals */
+/* Navbar */
+.navbar {
+  width: auto;
+  background: var(--mainBlack);
+}
+.nav-min {
+  width: auto;
+  background: var(--mainBlack);
+}
+ul{
+  position: relative;
+  top: 0;
+}
+.row{
+  padding: 0 !important;
+  justify-content: left !important;
+}
+.nav-btn {
+  font-size: 1.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  color: var(--primaryColor);
+}
+.nav-btn:focus {
+  outline: none;
+}
+.nav-btn:hover {
+  outline: none;
+  color: var(--mainWhite);
+}
+.nav-links1 {
+  height: 0;
+  display: none;
+}
+.nav-links{
+  overflow: hidden;
+  list-style-type: none;
+  text-align: center;
+  display: block;
+  color: var(--mainWhite);
+}
+.active {
+  background: linear-gradient(to right, #CCC 50%, #5A5000 50%, #CBA700);
+  transition: 0.5s ease-out;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: -100%;
+  text-decoration: none;
+}
+.nav-links a{
+  overflow: hidden;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  font-size:1.3rem;
+  text-transform: capitalize;
+  padding: 0.3rem;
+  list-style-type: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainWhite);
+}
+.nav-links a:hover {
+ background: linear-gradient(to right, #CCC 50%, #5A5000 50%, #CBA700);
+ transition: 0.5s ease-out;
+ background-size: 200%;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-position: -100%;
+ text-decoration: none;
+}
+.show-nav {
+  height: auto;
+}
+.nav-item{
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--mainWhite);
+  font-size:1.3rem;
+  text-transform: capitalize;
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  list-style-type: none;
+  letter-spacing: var(--mainSpacing);
+}
+.nav-item:hover {
+ background: linear-gradient(to right, #CCC 50%, #5A5000 50%, #CBA700);
+ transition: 0.5s ease-out;
+ background-size: 200%;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-position: -100%;
+ cursor: pointer;
+ text-decoration: none;
+}
+.nav-item:focus{
+  border-color:transparent;
+  outline:none;
+}
+.text{
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--primaryColor);
+  font-size: 1.3rem;
+  letter-spacing: var(--mainSpacing);
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+.text:hover {
+ color: var(--primaryColor);
+ cursor: pointer;
+ text-decoration: none;
+}
+.nav-text{
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--mainWhite);
+  font-size: 1rem;
+  letter-spacing: var(--mainSpacing);
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  background-color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  border-radius: 25px;
+}
+.nav-text:hover {
+ background: linear-gradient(to right, #CCC 50%, #5A5000 50%, #CBA700);
+ transition: 0.5s ease-out;
+ background-size: 200%;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-position: -100%;
+ cursor: pointer;
+}
+.nav-text:focus{
+  border-color:transparent;
+  outline:none;
+}
+/*.logo {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.logo a{
+  text-decoration: none;
+  color: var(--mainWhite);
+}
+.logo a:hover {
+  text-decoration: none;
+  color: var(--lightBlue);
+}*/
+/* end of navbar */
+/* Hero Video */
+.defaultHero,
+.roomsHero {
+  min-height: calc(100vh - 66px);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  overflow: hidden;
+}
+.roomsHero {
+  min-height: 60vh;
+}
+/* End of Hero*/
+/*Video*/
+.backgroundVideo {
+  display: flex;
+  width:100%;
+  height:100vh;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  transform: translate(0%, 0%);
+}
+/* End of Video*/
+/* Reserve*/
+.reserve {
+ padding: 5rem 0;
+ height: 100vh;
+ position: relative;
+ top: 4rem;
+}
+/* End of Reserve*/
+/* Slider*/
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: none;
+  bottom:15rem;
+}
+.slide{
+  min-width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+#goLeft, #goRight{
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+  width: 10%;
+  height: 90%;
+  background: none;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+} 
+#goLeft {
+  left: 0;
+}
+#goRight {
+  right: 0;
+}
+#goRight:hover{
+ background: rgba(0, 0, 0, 0.5);
+ cursor: pointer;
+}
+#goLeft:hover{
+ background: rgba(0, 0, 0, 0.5);
+ cursor: pointer;
+}
+.icon{
+  font-size: 2rem;
+  color: var(--primaryColor);
+}
+.icon:hover {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1240px) {
+  .slider{
+   display: none;
   }
-  to {
-    transform: rotate(360deg);
+}
+/* End of Slider*/
+/* RoomsSlider*/
+.roomslider {
+  position: relative;
+  width: 60%;
+  height: 55vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: none;
+  bottom:27rem;
+}
+.roomslide{
+  min-width: 100%;
+  height: 80%;
+  transition: 0.5s;
+}
+#goRoomLeft, #goRoomRight{
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 10%;
+  height: 90%;
+  background: none;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+} 
+#goRoomLeft {
+  left: 0;
+}
+#goRoomRight {
+  right: 0;
+}
+#goRight:hover{
+ background: rgba(0, 0, 0, 0.5);
+ cursor: pointer;
+}
+#goLeft:hover{
+ background: rgba(0, 0, 0, 0.5);
+ cursor: pointer;
+}
+.icon{
+  font-size: 2rem;
+}
+.icon:hover {
+  color: white;
+}
+/* End of RoomSlider*/
+/* Kontakt*/
+.kontakt{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.itext {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10rem;
+  padding-bottom: 1.5rem;
+  text-align: left;
+}
+.itext h6 {
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+}
+.itext h6,
+.itext p{
+  font-weight: bold;
+  color: var(--mainWhite);
+  padding-top: 4rem;
+}
+.itext span {
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+.btnInfo{
+  background: var(--primaryColor);
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  cursor: pointer;
+  border-radius: 25px;
+  color: var(--mainBlack);
+  border-color: var(--mainBlack);
+}
+.btnInfo:focus{
+  border-color:transparent;
+  outline:none;
+}
+.wrapper-about{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+}
+.wrapper-about h3,
+.wrapper-about h5{
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
+  text-align: center;
+  padding-bottom: 1.5rem;
+  padding-top: 3rem;
+  padding-right: 12rem;
+}
+.wrapper-info{
+  transition: 2s ease-in-out;
+}
+.wrapper-info:hover{
+  transform: scale(1.05);
+}
+@media screen and (max-width: 1450px) {
+  .wrapper-info{
+    display: none;
+  }
+  .wrapper-about{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 715px) {
+  .itext{
+    padding-left: 4rem;
+    padding-bottom: 1rem;
+  }
+  .itext h6{
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .itext p{
+    font-size: 0.8rem;
+    padding-top: 4.1rem;
+  }
+  .itext span{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 470px) {
+  .itext{
+    padding-left: 1rem;
+    padding-bottom: 0;
+  }
+  .itext h6{
+    font-size: 0.7rem;
+    padding-left: 0.2rem;
+    padding-right: 0.5rem;
+  }
+  .itext p{
+    font-size: 0.6rem;
+    padding-top: 4rem;
+  }
+  .itext span{
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+}
+/* End of Kontakt*/
+/* Roomscarousel */
+.roomscarousel {
+  padding-top: 7rem;
+  overflow: hidden;
+  height: 100vh;
+}
+.links-title{
+  text-decoration: none !important;
+}
+/* End of Roomscarousel */
+/* Booking info */
+.bookings-div{
+  width: 100%;
+  height: 100vh;
+}
+.bookings-div .bookings-info {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--mainWhite);
+}
+/* End of Booking info */
+/* Modal Booking */
+.booknow{
+  background: url('../src/images/Slide/booking.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+/* End of Modal Booking*/
+/* Banner */
+.banner {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--mainWhite);
+  padding: 2rem 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  position: relative;
+  top: 2rem;
+  transition: 2s ease-in-out; 
+}
+.banner:hover{
+  transform: scale(1.1);
+}
+.banner h1 {
+  font-size: 2.5rem;
+}
+.banner div {
+  width: 10rem;
+  height: 5px;
+  background: var(--primaryColor);
+  margin: 1.7rem auto;
+}
+.banner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 576px) {
+  .banner {
+    padding: 2rem;
+  }
+  .banner h1 {
+    font-size: 2rem;
+  }
+  .banner p {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .banner {
+    padding: 2rem 3rem;
+  }
+  .banner h1 {
+    font-size: 4rem;
+  }
+}
+/* End of Banner */
+/* Title */
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  transition: 1s ease-in-out;
+}
+.section-title:hover{
+  transform: scale(1.2);
+}
+.section-title h4 {
+  font-size: 2rem;
+  letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  color: var(--mainWhite);
+}
+.section-title div {
+  width: 5rem;
+  height: 5px;
+  margin: 0 auto;
+  background: var(--primaryColor);
+}
+/* end of Title */
+/* services */
+.services {
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  top: 4rem; 
+  overflow: hidden;
+}
+.services-center {
+  width: 100vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 50px;
+}
+.service span {
+  display: inline-block;
+  color: var(--primaryColor);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.service-hover{
+  transition: 1s ease-in-out;
+}
+.service-hover:hover{
+  transform: scale(1.2);
+}
+.services h6 {
+  letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
+  background: linear-gradient(to right, var(--primaryColor) 50%, #5A5000 50%, #CBA700);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s ease-out;
+}
+.services h6:hover{
+  background-position: -100%;
+}
+.services p {
+  width: 80%;
+  margin: 0 auto;
+  color: var(--mainWhite);
+}
+@media screen and (max-width: 715px) {
+  .services-center{
+    grid-column-gap: 0;
+    display: grid;
+  }
+  .services{
+    top: 0;
+  }
+}
+@media screen and (max-width: 470px) {
+  .services p{
+    font-size: 0.6rem;
+  }
+  .services h6{ 
+    font-size: 0.8em;
+  }
+  .services span{ 
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+}
+/*end of services */
+/* featured rooms */
+.featured-rooms {
+ padding: 5rem 0;
+ height: 100vh;
+ position: relative;
+ top: 4rem;
+}
+.featured-rooms-center {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 40px;
+}
+@media screen and (min-width: 776px) {
+  .featured-rooms-center {
+    width: 90vw;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  }
+}
+@media screen and (min-width: 992px) {
+  .featured-rooms-center {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
+/* end pf featured rooms */
+/* room */
+.room {
+  box-shadow: var(--lightShadow);
+  transition: 2s ease-in-out;
+  overflow: hidden;
+}
+.room:hover {
+  box-shadow: var(--darkShadow);
+  transform: scale(1.1);
+}
+.img-container {
+  position: relative;
+}
+.img-container img {
+  width: 100%;
+  display: block;
+  transition: var(--mainTransition);
+}
+.price-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--mainWhite);
+  padding: 0.3rem 0.6rem 0.5rem;
+  border-bottom-right-radius: 1rem;
+  font-size: 0.5rem;
+  text-align: center;
+  transition: var(--mainTransition);
+}
+.price-top h6 {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: var(--mainSpacing);
+}
+.room-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0);
+  transition: all 0.3s linear;
+}
+.img-container:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.img-container:hover img {
+  opacity: 0.3;
+}
+.img-container:hover .price-top {
+  opacity: 0;
+}
+.img-container:hover .room-link {
+  transform: translate(-50%, -50%) scale(1);
+}
+.room-info {
+  background: var(--primaryColor);
+  text-transform: capitalize;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: var(--mainSpacing);
+}
+/* end of room  */
+/* single room*/
+.single-room {
+  padding: 3rem 0 0 0;
+  overflow: hidden;
+}
+.single-room-images {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 50px;
+}
+.single-room-images img {
+  width: 100%;
+  display: block;
+}
+.single-room-info {
+  width: 80vw;
+  display: flex;
+  grid-template-columns: 2fr;
+  margin: 4rem auto;
+  color: var(--mainWhite);
+}
+.info h3,
+.desc h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
+  transition: 1s ease-in-out;
+}
+.desc h3:hover{
+  transform: scale(1.1);
+}
+.desc p {
+  line-height: 1.5;
+}
+.info h3:hover {
+  transform: scale(1.1);
+}
+.info h6:hover {
+  transform: scale(1.1);
+}
+.info h6 {
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  transition: 0.5s ease-in-out;
+}
+.extras {
+  overflow: hidden;
+}
+.room-extras ul{
+  list-style-type: none;
+}
+.room-extras {
+  width: 80vw;
+  margin: 0 auto 1rem auto;
+  line-height: 1.6;
+  color: var(--mainWhite);
+}
+.room-extras h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
+  transition: 1s ease-in-out;
+}
+.room-extras h3:hover {
+  transform: scale(1.1);
+}
+@media screen and (min-width: 1000px) {
+  .single-room-images,
+  .single-room-info,
+  .room-extras {
+    width: 95vw;
+    max-width: 1170px;
+  }
+  .single-room-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 2rem;
+  }
+  .info {
+    padding-left: 3rem;
+  }
+}
+@media screen and (max-width: 999px) {
+  .single-room-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 2rem;
+  }
+  .info {
+    padding-top: 3rem;
+  }
+}
+.btn-login {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainBlack);
+  background: var(--primaryColor);
+  padding: 0.4rem 0.9rem;
+  border: 3px solid var(--primaryColor);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-login:hover {
+  background: transparent;
+  color: var(--primaryColor);
+  text-decoration: none;
+  transform: scale(1.4);
+  transition: 2s;
+}
+/* end of single room*/
+/* roomlist */
+.roomslist {
+  padding: 0.5rem 0;
+}
+.roomslist-center {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 30px;
+}
+@media screen and (max-width: 325px) {
+  .roomslist-center {
+    width: 90vw;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+@media screen and (min-width: 776px) {
+  .roomslist-center {
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .roomslist-center {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
+/* end of roomlist */
+/*  rooms fitler*/
+.filter-container {
+  padding: 8rem 0;
+  overflow: hidden;
+}
+.filter-form {
+  width: 60vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(202px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 40px;
+}
+.form-group {
+  text-transform: capitalize;
+  font-weight: bold;
+  padding-top: 2rem;
+}
+.form-group label {
+  display: block;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 0.5rem;
+  color: var(--primaryColor);
+}
+.form-controls {
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid var(--mainBlack);
+  border-radius: 0.3rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.form-controls option{
+  font-weight: bold;
+}
+.form-controls:focus {
+  outline: none;
+}
+.size-inputs {
+  display: flex;
+}
+.size-input {
+  width: 40%;
+  padding: 0.2rem;
+  border: 1px solid var(--mainBlack);
+  border-radius: 0.3rem;
+  margin-right: 0.3rem;
+  font-weight: bold;
+}
+.size-input:focus {
+  outline: none;
+}
+.single-extra label {
+  display: inline-block;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 776px) {
+  .filter-form {
+    width: 70vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .filter-form {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
+/* end of rooms fitler*/
+/* login*/
+.login{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+}
+/* end of rooms login*/
+/* footer*/
+.footer{
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainBlack);
+  bottom: 0px; 
+  display: flex;
+  font-size: 1.5rem;
+  width: 100%;
+}
+@media screen and (max-width: 700px) {
+  .footer {
+    font-size: 1rem;
+  }
+}
+.footer-text a{
+  color: #666666;
+  text-decoration: none;
+  cursor: pointer;
+}
+.footer-text a:hover{
+  background: #262626 -webkit-gradient(linear, left top, right top, from(#262626), 
+    to(#262626), color-stop(0.5, #fff)) 0 0 no-repeat;
+  -webkit-background-size: 1.5rem;
+  background-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.1);
+  -webkit-background-clip: text;
+  animation: animate1 3s infinite;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+@keyframes animate1{
+  0%, 10%{
+    background-position: -1000px;
+  }
+  20%{
+    background-position: top left;
+  }
+   90%{
+    background-position: top right;
+  }
+   100%{
+    background-position: 1000px;
+  }
+}
+/* end of footer*/
+/* wrapper*/
+.roomscarousel .wrapper{
+  padding-top: 3rem;
+  transform: translateY(-10%);
+}
+.wrapper{
+  width: auto;
+  color: #af9a7d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-text{
+  letter-spacing: 2px;
+}
+.banner-text:after{
+  content: '';
+  animation: animate-2 5s linear infinite;
+}
+@keyframes animate-2{
+  0%{
+    content: 'Our hotel...';
+  }
+  100%{
+    content: 'Your pleasure';
+  }
+}
+@media screen and (max-width: 400px) {
+  .roomscarousel .wrapper{
+    padding-top: 1.5rem;
+  }
+  .banner-text{
+    font-size: 1.5rem;
   }
 }
