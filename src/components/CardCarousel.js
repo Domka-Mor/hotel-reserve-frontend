@@ -42,8 +42,9 @@ export default class CardCarousel extends React.Component {
             <Title title='our rooms'/>
           </a>      
           <Carousel responsive={responsive}
-                    swipeable={true}
+                    swipeable={false}
                     infinite={true}
+                    arrows={false}
                     autoPlay={this.props.deviceType !== "mobile" ? true : false}
                     autoPlaySpeed={3000}                  
                     transitionDuration={3000}

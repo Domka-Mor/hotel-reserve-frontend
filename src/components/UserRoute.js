@@ -10,7 +10,7 @@ export default class UserRoute extends React.Component {
 	render() {
 
 		const Component = this.props.component;
-		const isAuthenticated = this.context.login;
+		const isAuthenticated = this.context.token;
 
 		return (
 			isAuthenticated ? 

@@ -302,7 +302,7 @@ static contextType = AuthContext;
         return (
           <>
             <NavbarSingleRoom/>
-            <ScrollUpButton EasingType="easeInBounce" style={{background: 'var(--primaryColor)', outline:'none'}}/>
+            <ScrollUpButton style={{background: 'var(--primaryColor)', outline:'none'}}/>
             <StyledHero img = {images[0]}>
               <Banner title={`${name} room`}>
                 <Link to='/rooms' className='btn-main'>

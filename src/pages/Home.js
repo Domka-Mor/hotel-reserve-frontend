@@ -26,7 +26,7 @@ export default function Home(props) {
 			<CardCarousel/>	
 			<ReservationInfo/>				
 			<AboutUs/>
-			<ScrollUpButton EasingType="easeInBounce" style={{background: 'var(--primaryColor)', outline:'none'}}/>
+			<ScrollUpButton style={{background: 'var(--primaryColor)', outline:'none'}}/>
 			<Footer/>
 		</>
 	);

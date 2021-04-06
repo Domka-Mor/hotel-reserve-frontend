@@ -1,5 +1,5 @@
 import React from 'react';
-
+import loadingGif from '../../images/gif/loading-arrow.gif';
 import './BookingList.css';
 
 const bookingList = props => (
@@ -31,6 +31,7 @@ const bookingList = props => (
       (
         <div className='bookings-div'>
           <h4 className='bookings-info text-center'>No bookings available</h4>
+          <img src={loadingGif} alt=''/>
         </div>
       )
     }

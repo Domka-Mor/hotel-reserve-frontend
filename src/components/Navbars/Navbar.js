@@ -30,7 +30,7 @@ export default class Navbar extends React.Component {
 									<i className="fas fa-bars"></i>
 								</button>
 			                </div>
-			                <div className='row d-flex align-items-center justify-content-center pt-2'>	
+			                <div className='pt-2'>	
 			                	<ul className={this.state.isOpen?
 									'nav-links show-nav':'nav-min nav-links1'}>
 				                    <Link1
@@ -74,7 +74,7 @@ export default class Navbar extends React.Component {
 										About Us
 									</Link1>
 									{context.token && (                  
-						                <Link2 to="/bookings" className="text" onClick={this.handleToggle}>Bookings</Link2>
+						                <Link2 to="/bookings" onClick={this.handleToggle}>Bookings</Link2>
 						            )}      				             				                   				                         
 						            {context.token && (                  
 						                <Link2 to='/'>
@@ -141,12 +141,12 @@ export default class Navbar extends React.Component {
 					            )}      				             				                   				                         
 					            {context.token && (                  
 					                <Link2 to='/'>
-					                   <button className="nav-text" onClick={context.logout}>Logout</button>
+					                   <button className="nav-text" onClick={() => {context.logout();}}>Logout</button>
 					                </Link2>
 					            )}	
 					            {!context.token && (
 					            <Link2 to="/auth">
-					                   <button className="nav-text" onClick={context.login}>Login</button>
+					                   <button className="nav-text" onClick={() => {context.login();}}>Login</button>
 					            </Link2> 
 					            )}	 
 							</span>

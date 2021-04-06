@@ -23,7 +23,7 @@ export default class Rooms extends React.Component {
 			</Banner>
 		</VideoRooms>
 		<RoomContainer/>
-		<ScrollUpButton EasingType="easeInBounce" style={{background: 'var(--primaryColor)', outline:'none'}}/>
+		<ScrollUpButton style={{background: 'var(--primaryColor)', outline:'none'}}/>
 		</>
 	)
 }

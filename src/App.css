@@ -126,14 +126,6 @@ h6 {
   width: auto;
   background: var(--mainBlack);
 }
-ul{
-  position: relative;
-  top: 0;
-}
-.row{
-  padding: 0 !important;
-  justify-content: left !important;
-}
 .nav-btn {
   font-size: 1.4rem;
   background: transparent;
@@ -265,18 +257,14 @@ ul{
   border-color:transparent;
   outline:none;
 }
-/*.logo {
+.logo {
   margin-right: 1rem;
   margin-left: 1rem;
+  padding-top: 0.4rem;
+  font-family: 'Mr Dafoe', cursive;
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
 }
-.logo a{
-  text-decoration: none;
-  color: var(--mainWhite);
-}
-.logo a:hover {
-  text-decoration: none;
-  color: var(--lightBlue);
-}*/
 /* end of navbar */
 /* Hero Video */
 .defaultHero,
@@ -555,6 +543,13 @@ ul{
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--mainWhite);
+}
+.bookings-div img {
+  position: relative;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
 }
 /* End of Booking info */
 /* Modal Booking */
