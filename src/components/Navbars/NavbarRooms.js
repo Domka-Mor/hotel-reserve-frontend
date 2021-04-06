@@ -32,9 +32,7 @@ export default class NavbarRooms extends React.Component {
 				                	<ul className={this.state.isOpen?
 										'nav-links show-nav':'nav-min nav-links1'}>	
 											<li>
-						                    	<Link to='/' className="logo text" onClick={this.handleToggle}>
-						                        	<h4>BR</h4>
-						                        </Link>
+						                    	<Link to='/' className="logo text" onClick={this.handleToggle}>BR</Link>
 						                    </li>    			                    										  				             				                   				                         
 							            {context.token && (               
 								            <Link to='/bookings' onClick={this.handleToggle}>Bookings</Link>							                
@@ -58,9 +56,7 @@ export default class NavbarRooms extends React.Component {
 							<nav className="navbar navbar-expand-lg fixed-top">									
 								<ul className="navbar-nav mr-auto">	
 									<li>
-				                    	<Link to='/' className="logo nav-item">
-				                        	<h4>BR</h4>
-				                      	</Link>
+				                    	<Link to='/' className="logo nav-item">BR</Link>
 				                    </li>			                    										  				             				            			                    										  				             				                   				                         						         
 								</ul>
 								<span className="navbar-text">

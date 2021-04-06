@@ -260,7 +260,8 @@ h6 {
 .logo {
   margin-right: 1rem;
   margin-left: 1rem;
-  padding-top: 0.4rem;
+  padding-top: 0.2rem;
+  font-size: 1.6rem;
   font-family: 'Mr Dafoe', cursive;
   letter-spacing: var(--mainSpacing);
   color: var(--primaryColor);
