@@ -1,5 +1,6 @@
 import React from 'react';
 import {RoomContext} from '../context';
+import {Link} from 'react-router-dom';
 import Room from './Room';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -38,9 +39,9 @@ export default class CardCarousel extends React.Component {
     return (
       <>
         <section className='roomscarousel' id='rooms'>
-          <a href='/rooms' className='links-title'>
+          <Link to='/rooms' className='links-title'>
             <Title title='our rooms'/>
-          </a>      
+          </Link>      
           <Carousel responsive={responsive}
                     swipeable={false}
                     infinite={true}

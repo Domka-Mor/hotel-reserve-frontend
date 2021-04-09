@@ -156,7 +156,7 @@ strong{
  cursor: pointer;
 }
 .auth-btn:focus{
-  border-color:transparent;
+  border: 1px solid var(--primaryColor);
   outline:none;
 }
 @media screen and (max-width: 500px) {

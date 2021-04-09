@@ -1037,6 +1037,9 @@ h6 {
 }
 .footer-text a{
   color: #666666;
+  font-size:1.5rem;
+  font-weight: 800;
+  letter-spacing: var(--mainSpacing);
   text-decoration: none;
   cursor: pointer;
 }
@@ -1048,7 +1051,6 @@ h6 {
   color: rgba(255, 255, 255, 0.1);
   -webkit-background-clip: text;
   animation: animate1 3s infinite;
-  font-size: 1.5rem;
   text-decoration: none;
 }
 @keyframes animate1{

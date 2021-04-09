@@ -64,6 +64,7 @@ class AuthPage extends Component {
           password: password
         }
       };
+      this.setState({isLogin: true});
     }
 
     fetch('https://hotel-reserve-back.herokuapp.com/graphql', {
